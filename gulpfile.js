@@ -33,7 +33,7 @@ var path = {
     home: "dist/",
     pages: "dist/pages",
     css: "dist/",
-    js: "dist/js",
+    js: "dist/",
     favicons: "dist/images/favicons",
     img: "dist/images/img",
     svg: "dist/images/svg",
@@ -41,7 +41,7 @@ var path = {
     fonts: "dist/fonts"
   },
   src: {
-    html: "src/pages/**/*.pug",
+    html: "src/**/*.pug",
     css: "src/**/*.scss",
     js: "src/**/*.js",
     favicons: "src/images/favicons/favicon.png",
@@ -69,7 +69,7 @@ function generateFavicons(done) {
   realFavicon.generateFavicon({
     masterPicture: path.src.favicons,
     dest: path.build.favicons,
-    iconsPath: '/',
+    iconsPath: '/images/favicons',
     design: {
         ios: {
             pictureAspect: 'noChange',
@@ -150,7 +150,8 @@ function css() {
     cascade: true
   }))
   .pipe(csso({
-    debug: true
+    debug: true,
+    comments: false
   }))
   .pipe(sourcemaps.write('.'))
   .pipe(dest(path.build.css));
@@ -240,7 +241,7 @@ function watchFiles() {
   gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, generateFavicons, gulp.parallel(html, css, js, img, svgMin, fonts), cleancss, sprite);
+const build = gulp.series(clean, /*generateFavicons,*/ gulp.parallel(html, css, js, img, svgMin, fonts, cleancss, sprite));
 const watch = gulp.parallel(build, watchFiles);
 
 exports.html = html;

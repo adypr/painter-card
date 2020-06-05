@@ -1,0 +1,146 @@
+include ../../base/head
+  title Tatiana Verde
+  body
+    h1 this is main header
+    h2 it is main
+
+    .hero.bg-primary
+    .container-fluid
+        .row
+            .col-md-8.hero__slider.p-0
+                #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+                    ol.carousel-indicators
+                        li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+                        li(data-target='#carouselExampleIndicators' data-slide-to='1')
+                        li(data-target='#carouselExampleIndicators' data-slide-to='2')
+                    .carousel-inner
+                        .carousel-item.active(data-interval="10000")
+                            img.d-block.w-100(src='images/img/carousel1.webp' alt='filming1')
+                        .carousel-item(data-interval="10000")
+                            img.d-block.w-100(src='images/img/carousel2.webp' alt='filming2')
+                        .carousel-item(data-interval="10000")
+                            img.d-block.w-100(src='images/img/carousel3.webp' alt='filming3')
+                    a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                        span.carousel-control-prev-icon(aria-hidden='true')
+                        span.sr-only Пред.
+                    a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                        span.carousel-control-next-icon(aria-hidden='true')
+                        span.sr-only След.
+            .col-md-4.align-self-center.text-center.text-md-left
+                h1.hero__text.h1 Стилист съемок
+
+    button.btn.btn-primary(type='button') &Gcy;&lcy;&acy;&vcy;&ncy;&ycy;&jcy;
+    button.btn.btn-secondary(type='button') &Vcy;&tcy;&ocy;&rcy;&icy;&chcy;&ncy;&ycy;&jcy;
+    button.btn.btn-success(type='button') &Ucy;&scy;&pcy;&iecy;&khcy;
+    button.btn.btn-danger(type='button') &Ocy;&pcy;&acy;&scy;&ncy;&ocy;&scy;&tcy;&softcy;
+    button.btn.btn-warning(type='button') &Pcy;&rcy;&iecy;&dcy;&ucy;&pcy;&rcy;&iecy;&zhcy;&dcy;&iecy;&ncy;&icy;&iecy;
+    button.btn.btn-info(type='button') &Icy;&ncy;&fcy;&ocy;
+    button.btn.btn-light(type='button') &Scy;&vcy;&iecy;&tcy;&lcy;&ycy;&jcy;
+    button.btn.btn-dark(type='button') &Tcy;&iecy;&mcy;&ncy;&ycy;&jcy;
+    button.btn.btn-link(type='button') &Lcy;&icy;&ncy;&kcy;
+
+    .custom-control.custom-switch
+      input#customSwitch1.custom-control-input(type='checkbox')
+      label.custom-control-label(for='customSwitch1') Toggle this switch element
+    .custom-control.custom-switch
+      input#customSwitch2.custom-control-input(type='checkbox' disabled='')
+      label.custom-control-label(for='customSwitch2') Disabled switch element
+    form
+      .form-group.row
+        label.col-sm-2.col-form-label(for='inputEmail3') Email
+        .col-sm-10
+          input#inputEmail3.form-control(type='email')
+      .form-group.row
+        label.col-sm-2.col-form-label(for='inputPassword3') Password
+        .col-sm-10
+          input#inputPassword3.form-control(type='password')
+      fieldset.form-group
+        .row
+          legend.col-form-label.col-sm-2.pt-0 Radios
+          .col-sm-10
+            .form-check
+              input#gridRadios1.form-check-input(type='radio' name='gridRadios' value='option1' checked='')
+              label.form-check-label(for='gridRadios1')
+                | First radio
+            .form-check
+              input#gridRadios2.form-check-input(type='radio' name='gridRadios' value='option2')
+              label.form-check-label(for='gridRadios2')
+                | Second radio
+            .form-check.disabled
+              input#gridRadios3.form-check-input(type='radio' name='gridRadios' value='option3' disabled='')
+              label.form-check-label(for='gridRadios3')
+                | Third disabled radio
+      .form-group.row
+        .col-sm-2 Checkbox
+        .col-sm-10
+          .form-check
+            input#gridCheck1.form-check-input(type='checkbox')
+            label.form-check-label(for='gridCheck1')
+              | Example checkbox
+      .form-group.row
+        .col-sm-10
+      button.btn.btn-primary(type='submit') Sign in
+
+    .card-columns
+      .card
+        img.card-img-top(src='...' alt='...')
+        .card-body
+          h5.card-title &Ncy;&acy;&zcy;&vcy;&acy;&ncy;&icy;&iecy; &kcy;&acy;&rcy;&tcy;&ocy;&chcy;&kcy;&icy; that wraps to a new line
+          p.card-text
+            | This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+      .card.p-3
+        blockquote.blockquote.mb-0.card-body
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+          footer.blockquote-footer
+            small.text-muted
+              | Someone famous in
+              cite(title='Source Title') Source Title
+      .card
+        img.card-img-top(src='...' alt='...')
+        .card-body
+          h5.card-title &Ncy;&acy;&zcy;&vcy;&acy;&ncy;&icy;&iecy; &kcy;&acy;&rcy;&tcy;&ocy;&chcy;&kcy;&icy;
+          p.card-text This card has supporting text below as a natural lead-in to additional content.
+          p.card-text
+            small.text-muted Last updated 3 mins ago
+      .card.bg-primary.text-white.text-center.p-3
+        blockquote.blockquote.mb-0
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.
+          footer.blockquote-footer.text-white
+            small
+              | Someone famous in
+              cite(title='Source Title') Source Title
+      .card.text-center
+        .card-body
+          h5.card-title &Ncy;&acy;&zcy;&vcy;&acy;&ncy;&icy;&iecy; &kcy;&acy;&rcy;&tcy;&ocy;&chcy;&kcy;&icy;
+          p.card-text This card has a regular title and short paragraphy of text below it.
+          p.card-text
+            small.text-muted Last updated 3 mins ago
+      .card
+        img.card-img-top(src='...' alt='...')
+      .card.p-3.text-right
+        blockquote.blockquote.mb-0
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+          footer.blockquote-footer
+            small.text-muted
+              | Someone famous in
+              cite(title='Source Title') Source Title
+      .card
+        .card-body
+          h5.card-title &Ncy;&acy;&zcy;&vcy;&acy;&ncy;&icy;&iecy; &kcy;&acy;&rcy;&tcy;&ocy;&chcy;&kcy;&icy;
+          p.card-text
+            | This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.
+          p.card-text
+            small.text-muted Last updated 3 mins ago
+    .card(style='width: 18rem;')
+      img.card-img-top(src='...' alt='...')
+      .card-body
+        h5.card-title &Ncy;&acy;&zcy;&vcy;&acy;&ncy;&icy;&iecy; &kcy;&acy;&rcy;&tcy;&ocy;&chcy;&kcy;&icy;
+        p.card-text
+          | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+        a.btn.btn-primary(href='#') &Pcy;&iecy;&rcy;&iecy;&khcy;&ocy;&dcy; &kcy;&ucy;&dcy;&acy;-&ncy;&icy;&bcy;&ucy;&dcy;&softcy;
+
+
+
+    include ../../base/scripts
