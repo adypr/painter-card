@@ -245,7 +245,6 @@ function clean() {
 function watchFiles() {
   /*gulp.watch([path.watch.favicons], generateFavicons);*/
   gulp.watch([path.watch.html], html);
-  gulp.watch(["dist/layouts/**/*.html", "dist/index.html"], htmlIncludeFavicons);
   gulp.watch([path.watch.css], css);
   gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.img], img);
