@@ -133,6 +133,17 @@ function html() {
   return src(path.src.html, {base: "src/"})
   .pipe(plumber())
   .pipe(pug())
+  /*.pipe(posthtml([
+    include()
+  ]))
+  .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))*/
+  .pipe(htmlmin({ collapseWhitespace: true }))
+  .pipe(dest(path.build.home));
+}
+
+function htmlIncludeFavicons() {
+  return src(["dist/layouts/**/*.html", "dist/index.html"], {base: "dist/"})
+  .pipe(plumber())
   .pipe(posthtml([
     include()
   ]))
@@ -232,8 +243,9 @@ function clean() {
 }
 
 function watchFiles() {
-  gulp.watch([path.watch.favicons], generateFavicons);
+  /*gulp.watch([path.watch.favicons], generateFavicons);*/
   gulp.watch([path.watch.html], html);
+  gulp.watch(["dist/layouts/**/*.html", "dist/index.html"], htmlIncludeFavicons);
   gulp.watch([path.watch.css], css);
   gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.img], img);
@@ -241,7 +253,7 @@ function watchFiles() {
   gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, /*generateFavicons,*/ gulp.parallel(html, css, js, img, svgMin, fonts, cleancss, sprite));
+const build = gulp.series(clean, /*generateFavicons,*/ gulp.parallel(html, css, js, img, svgMin, fonts, cleancss, sprite), htmlIncludeFavicons);
 const watch = gulp.parallel(build, watchFiles);
 
 exports.html = html;
