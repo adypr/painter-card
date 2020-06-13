@@ -32,5 +32,6 @@
     "source.fixAll.tslint": true,
     // For Stylelint
     "source.fixAll.stylelint": true
-}
+},
+"liveServer.settings.CustomBrowser": "firefox"
 }
