@@ -53,7 +53,7 @@ var path = {
   },
   watch: {
     html: "src/**/*.pug",
-    css: "src/**/*.scss",
+    css: "src/**/*.{scss,pug}",
     js: "src/**/*.js",
     favicons: "src/images/favicons/*.png",
     img: "src/images/img/**/*.{png,jpg}",
@@ -133,10 +133,6 @@ function html() {
   return src(path.src.html, {base: "src/"})
   .pipe(plumber())
   .pipe(pug())
-  /*.pipe(posthtml([
-    include()
-  ]))
-  .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))*/
   .pipe(htmlmin({ collapseWhitespace: true }))
   .pipe(dest(path.build.home));
 }
@@ -156,6 +152,9 @@ function css() {
   return src(path.src.css, {base: "src/"})
   .pipe(plumber())
   .pipe(sass())
+  .pipe(purgecss({
+    content: ['src/**/*.pug']
+  }))
   .pipe(sourcemaps.init())
   .pipe(autoprefixer({
     cascade: true
@@ -166,15 +165,6 @@ function css() {
   }))
   .pipe(sourcemaps.write('.'))
   .pipe(dest(path.build.css));
-}
-
-function cleancss() {
-  return src('dist/**/*.css')
-  .pipe(plumber())
-  .pipe(purgecss({
-    content: ['dist/**/*.html']
-  }))
-  .pipe(gulp.dest('dist/'));
 }
 
 function js() {
@@ -243,7 +233,6 @@ function clean() {
 }
 
 function watchFiles() {
-  /*gulp.watch([path.watch.favicons], generateFavicons);*/
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
   gulp.watch([path.watch.js], js);
@@ -252,8 +241,9 @@ function watchFiles() {
   gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, /*generateFavicons,*/ gulp.parallel(html, css, js, img, svgMin, fonts, cleancss, sprite), htmlIncludeFavicons);
+const build = gulp.series(clean, gulp.parallel(html, css, js, img, svgMin, fonts, sprite));
 const watch = gulp.parallel(build, watchFiles);
+const prod = gulp.series(generateFavicons, htmlIncludeFavicons);
 
 exports.html = html;
 exports.css = css;
@@ -265,4 +255,5 @@ exports.sprite = sprite;
 exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
+//exports.prod = prod;
 exports.default = watch;
