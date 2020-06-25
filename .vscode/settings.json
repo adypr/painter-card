@@ -1,29 +1,8 @@
 {
-  "liveSassCompile.settings.formats":[
-     {
-         "extensionName": ".min.css",
-         "format": "compressed",
-         "savePath": "/dist/css/"
-     },
-     {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": "/dist/css/"
-  },
- ],
- "liveSassCompile.settings.excludeList": [
-    "**/node_modules/**",
-    ".vscode/**"
- ],
- "liveSassCompile.settings.generateMap": true,
- "liveSassCompile.settings.autoprefix": [
-     "> 1%",
-     "last 2 versions"
- ],
  "liveServer.settings.root": "/dist",
- "editor.defaultFormatter": "esbenp.prettier-vscode",
+ "editor.defaultFormatter": "vscode.emmet",
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "EditorConfig.EditorConfig"
   },
   "editor.codeActionsOnSave": {
     // For ESLint
@@ -33,5 +12,5 @@
     // For Stylelint
     "source.fixAll.stylelint": true
 },
-"liveServer.settings.CustomBrowser": "firefox"
+"liveServer.settings.CustomBrowser": "chrome"
 }
