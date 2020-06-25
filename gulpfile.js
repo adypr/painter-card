@@ -1,7 +1,6 @@
 var {src, dest} = require("gulp");
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
-var rename = require('gulp-rename');
 var del = require('del');
 var pug = require('gulp-pug');
 var htmlmin = require('gulp-htmlmin');
@@ -21,7 +20,6 @@ var imagemin = require('gulp-imagemin');
 var webp = require('gulp-webp');
 var posthtml = require('gulp-posthtml');
 var include = require('posthtml-include');
-var svgstore = require('gulp-svgstore');
 var svgmin = require('gulp-svgmin');
 var cheerio = require('gulp-cheerio');
 var replace = require('gulp-replace');
@@ -37,7 +35,6 @@ var path = {
     favicons: "dist/images/favicons",
     img: "dist/images/img",
     svg: "dist/images/svg",
-    sprite: "dist/images/svg",
     fonts: "dist/fonts"
   },
   src: {
@@ -47,8 +44,7 @@ var path = {
     favicons: "src/images/favicons/favicon.png",
     img: "src/images/img/**/*.{png,jpg}",
     svg: "src/images/svg/**/*.svg",
-    sprite: "dist/images/svg/icon-*.svg",
-    fonts: "src/fonts/**/*.*"
+    fonts: "src/fonts/**/*.{woff,woff2}"
 
   },
   watch: {
@@ -212,16 +208,6 @@ function svgMin() {
   .pipe(dest(path.build.svg));
 }
 
-function sprite() {
-  return src(path.src.sprite)
-  .pipe(plumber())
-  .pipe(svgstore({
-    inlineSvg: true
-  }))
-  .pipe(rename("sprite.svg"))
-  .pipe(dest(path.build.sprite));
-}
-
 function fonts() {
   return src(path.src.fonts)
   .pipe(plumber())
@@ -241,19 +227,18 @@ function watchFiles() {
   gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, img, svgMin, fonts, sprite));
+const build = gulp.series(clean, gulp.parallel(html, css, js, img, svgMin, fonts));
 const watch = gulp.parallel(build, watchFiles);
 const prod = gulp.series(generateFavicons, htmlIncludeFavicons);
 
 exports.html = html;
 exports.css = css;
-exports.jsss = js;
+exports.js = js;
 exports.generateFavicons = generateFavicons;
 exports.img = img;
 exports.svgMin = svgMin;
-exports.sprite = sprite;
 exports.clean = clean;
 exports.build = build;
 exports.watch = watch;
-//exports.prod = prod;
+exports.prod = prod;
 exports.default = watch;
