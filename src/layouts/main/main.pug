@@ -1,6 +1,51 @@
-include ../../base/head
-  title Tatiana Verde
-  body
-    include ../../blocks/header/header
+doctype html
+html(lang="ru")
+  include ../../base/head
+  title Tatiana Yasin
+body
+  include ../../base/variables
+  include ../../base/mixins
+  include ../../blocks/blognews/blognews
 
-    include ../../base/scripts
+  mixin pictures(items)
+    each item in items
+      figure.portfolio__picture
+        a(href=item[1] data-caption="<h6>"+item[4]+"</h6><button class=\"btn btn-primary\">Подробнее</button>")
+          img.portfolio__image(src=item[0] alt=item[4])
+        figcaption.portfolio__caption
+          p.portfolio__title=item[4]
+          a(href="#") Подробнее
+
+
+  header.header
+    .header__container
+      nav.header__nav
+        a.email(href="mailto:"+emailText+"?subject=Сообщение с сайта")=emailText
+        button.header__toggler(type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+          span.header__icon
+        .header__menu(id="navbarNav")
+          ul.header__list
+            +headerMenu(mainMenuItems)
+  .hero.color-container
+    .hero__container
+      h1.hero__title Tatiana Yasin
+      p.hero__text Живопись и графика художника Татьяны Ясин
+
+  main.portfolio.block
+    nav.portfolio__links
+      a.title-link(href="#")
+        h2 Галерея
+      .portfolio__categories
+        +categories(categories)
+    .portfolio__pictures
+      +pictures(images)
+
+  .blog-preview.color-container.block
+    a.title-link(href="#")
+        h2.blogcards__title Новости, статьи
+    .blogcards
+      +blogcard(articles)
+
+  include ../../blocks/footer/footer
+
+  include ../../base/scripts

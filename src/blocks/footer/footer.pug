@@ -1,0 +1,25 @@
+include ../../base/variables
+include ../../base/mixins
+
+.footer
+  .footer__container.block
+    .footer__contact
+      a.email(href="mailto:"+emailText+"?subject=Сообщение с сайта")=emailText
+      br
+      adress.location=adressText
+    .message-link
+      button.message-link__button Отправить сообщение
+    .menu-social
+      ul.footer__menu
+        +headerMenu(mainMenuItems)
+      .social
+        a.youtube(href="#" title="youtube")
+          i.fi.icon-youtube
+        a.vk(href="#" title="vk")
+          i.fi.icon-vk
+        a.saatchiart(href="#" title="saatchi art")
+          i.fi.icon-saatchiart2
+
+.copyright
+  .copyright__container
+    p © Tatiana Yasin, 2020

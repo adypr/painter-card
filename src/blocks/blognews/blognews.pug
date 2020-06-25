@@ -1,0 +1,9 @@
+mixin blogcard(posts)
+  each post in posts
+    .blognews
+      img.blognews__image(src=post[0])
+      .blognews__description
+        h5.blognews__title=post[1]
+        p.blognews__text=post[2]
+        a.blognews__link.fi.icon-arrow(href="#")
+          span.blognews__decor Продолжить чтение

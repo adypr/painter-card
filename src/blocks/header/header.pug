@@ -1,10 +1,12 @@
-.container
-  h1.logo Tatiana Verde
+include ../../base/variables
+include ../../base/mixins
 
-  br
-  h1.nk Заголовок 1
-  article
-    h2.nk Заголовок 2 Дnk Header
-
-    p What is Lorem Ipsum?
-    p Кстати, представители современных социальных резервов представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть разоблачены. Прежде всего, новая модель организационной деятельности прекрасно подходит для реализации поставленных обществом задач. Повседневная практика показывает, что граница обучения кадров напрямую зависит от своевременного выполнения сверхзадачи. В целом, конечно, глубокий уровень погружения является качественно новой ступенью модели развития.
+header.header
+    .header__container
+      nav.header__nav
+        a.brand(href="#") Tatiana Yasin
+        button.header__toggler(type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
+          span.header__icon
+        .header__menu(id="navbarNav")
+          ul.header__list
+            +headerMenu(mainMenuItems)

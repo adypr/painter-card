@@ -1,0 +1,36 @@
+
+.color-container {
+  background-color: $gray-200;
+
+  @extend .container-fluid;
+  @extend .border-top;
+  @extend .border-bottom;
+}
+
+.category {
+  @extend .btn;
+  @extend .btn-info;
+}
+
+.title-link {
+  @extend .navbar-brand;
+}
+
+h2,
+h3 {
+  &::after {
+    padding-left: 20px;
+
+    @media (max-width: 400px) {
+      display: none;
+    }
+  }
+
+  @extend .fi;
+  @extend .icon-feather;
+}
+
+.block {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}

@@ -1,0 +1,51 @@
+
+.header {
+  &__container {
+    text-align: center;
+
+    @extend .container;
+  }
+
+  &__nav {
+    @extend .navbar;
+    @extend .navbar-light;
+    @extend .navbar-expand-sm;
+  }
+
+  &__toggler {
+    @extend .navbar-toggler;
+  }
+
+  &__icon {
+    @extend .navbar-toggler-icon;
+  }
+
+  &__menu {
+    justify-content: flex-end;
+
+    @extend .collapse;
+    @extend .navbar-collapse;
+  }
+
+  &__list {
+    @extend .navbar-nav;
+  }
+
+  &__item {
+    &:first-child {
+      @extend .active;
+    }
+
+    @extend .nav-item;
+  }
+
+  &__link {
+    @extend .nav-link;
+  }
+}
+
+.brand {
+  font-family: $font-family-logo;
+
+  @extend .navbar-brand;
+}

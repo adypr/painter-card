@@ -1,0 +1,46 @@
+
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  font-family: "icon";
+  src:
+    url("./fonts/icon.woff2") format("woff2"),
+    url("./fonts/icon.woff") format("woff");
+}
+
+.fi::after,
+.fi::before {
+  display: inline-block;
+
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  font-family: "icon";
+  text-transform: none;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-arrow::after { content: "\f100"; }
+.icon-feather::after { content: "\f101"; }
+.icon-pin::before { content: "\f102"; }
+.icon-calendar::before { content: "\f103"; }
+.icon-mail::before { content: "\f104"; }
+.icon-vk::before { content: "\f105"; }
+.icon-instagram-logo::before { content: "\f106"; }
+.icon-youtube::before { content: "\f107"; }
+.icon-saatchiart2::before { content: "\f108"; }
+
+$font-icon-arrow: "\f100";
+$font-icon-feather: "\f101";
+$font-icon-pin: "\f102";
+$font-icon-calendar: "\f103";
+$font-icon-mail: "\f104";
+$font-icon-vk: "\f105";
+$font-icon-instagram-logo: "\f106";
+$font-icon-youtube: "\f107";
+$font-icon-saatchiart2: "\f108";

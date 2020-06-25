@@ -3,6 +3,18 @@
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
+$white:    #ffffff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000000 !default;
+
 // Color system
 
 $blue:    #acbfe6;
@@ -70,6 +82,12 @@ $container-max-widths: (
 $grid-columns:                12 !default;
 $grid-gutter-width:           30px !default;
 $grid-row-columns:            6 !default;
+
+// Components
+
+$border-radius:                0 0.55rem 0 0.55rem;
+$border-radius-lg:             0 0.65rem 0 0.65rem;
+$border-radius-sm:             0 0.5rem 0 0.5rem;
 
 // Typography
 //

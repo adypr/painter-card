@@ -1,0 +1,9 @@
+mixin headerMenu(items)
+  each item in items
+    li.header__item
+      a.header__link(href="#")=item
+
+mixin categories(items)
+  each item in items
+    button.category(type="button")=item
+
