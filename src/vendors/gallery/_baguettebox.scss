@@ -1,12 +1,8 @@
 .red {
   background-color: green;
 }
-/*!
- * baguetteBox.js
- * @author  feimosi
- * @version 1.11.1
- * @url https://github.com/feimosi/baguetteBox.js
- */#baguetteBox-overlay {
+
+#baguetteBox-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -24,7 +20,10 @@
   -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
 }
-#baguetteBox-overlay.visible { opacity: 1; }
+
+#baguetteBox-overlay.visible {
+  opacity: 1;
+}
 
 #baguetteBox-overlay .full-image {
   position: relative;
@@ -35,7 +34,12 @@
 
   text-align: center;
 }
-#baguetteBox-overlay .full-image figure { display: inline; height: 100%; margin: 0; }
+
+#baguetteBox-overlay .full-image figure {
+  display: inline;
+  height: 100%;
+  margin: 0;
+}
 
 #baguetteBox-overlay .full-image img {
   display: inline-block;
@@ -92,31 +96,71 @@
   transition: left 0.4s ease, transform 0.4s ease;
   transition: left 0.4s ease, transform 0.4s ease, -webkit-transform 0.4s ease, -moz-transform 0.4s ease;
 }
-#baguetteBox-slider.bounce-from-right { -webkit-animation: bouncefromright 0.4s ease-out; animation: bounceFromRight 0.4s ease-out; }
-#baguetteBox-slider.bounce-from-left { -webkit-animation: bouncefromleft 0.4s ease-out; animation: bounceFromLeft 0.4s ease-out; }
+
+#baguetteBox-slider.bounce-from-right {
+  -webkit-animation: bouncefromright 0.4s ease-out;
+  animation: bounceFromRight 0.4s ease-out;
+}
+
+#baguetteBox-slider.bounce-from-left {
+  -webkit-animation: bouncefromleft 0.4s ease-out;
+  animation: bounceFromLeft 0.4s ease-out;
+}
 
 @-webkit-keyframes bounceFromRight {
-  0%,
-  100% { margin-left: 0; }
-  50% { margin-left: -30px; }
+  0% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-left: -30px;
+  }
+
+  100% {
+    margin-left: 0;
+  }
 }
 
 @keyframes bounceFromRight {
-  0%,
-  100% { margin-left: 0; }
-  50% { margin-left: -30px; }
+  0% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-left: -30px;
+  }
+
+  100% {
+    margin-left: 0;
+  }
 }
 
 @-webkit-keyframes bounceFromLeft {
-  0%,
-  100% { margin-left: 0; }
-  50% { margin-left: 30px; }
+  0% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-left: 30px;
+  }
+
+  100% {
+    margin-left: 0;
+  }
 }
 
 @keyframes bounceFromLeft {
-  0%,
-  100% { margin-left: 0; }
-  50% { margin-left: 30px; }
+  0% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-left: 30px;
+  }
+
+  100% {
+    margin-left: 0;
+  }
 }
 
 .baguetteBox-button#next-button,
@@ -142,7 +186,7 @@
   border: 0;
   -moz-border-radius: 15%;
   border-radius: 15%;
-  outline: 0;
+  outline: none;
   cursor: pointer;
 
   -webkit-transition: background-color 0.4s ease;
@@ -150,9 +194,17 @@
 }
 
 .baguetteBox-button:focus,
-.baguetteBox-button:hover { background-color: rgba(50, 50, 50, 0.9); }
-.baguetteBox-button#next-button { right: 2%; }
-.baguetteBox-button#previous-button { left: 2%; }
+.baguetteBox-button:hover {
+  background-color: rgba(50, 50, 50, 0.9);
+}
+
+.baguetteBox-button#next-button {
+  right: 2%;
+}
+
+.baguetteBox-button#previous-button {
+  left: 2%;
+}
 
 .baguetteBox-button#close-button {
   top: 20px;
@@ -162,8 +214,17 @@
   width: 30px;
   height: 30px;
 }
-.baguetteBox-button svg { position: absolute; top: 0; left: 0; }
 
+.baguetteBox-button svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*
+    Preloader
+    Borrowed from http://tobiasahlin.com/spinkit/
+*/
 .baguetteBox-spinner {
   position: absolute;
   top: 50%;
@@ -193,16 +254,36 @@
   -webkit-animation: bounce 2s infinite ease-in-out;
   animation: bounce 2s infinite ease-in-out;
 }
-.baguetteBox-double-bounce2 { -webkit-animation-delay: -1s; animation-delay: -1s; }
+
+.baguetteBox-double-bounce2 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
 
 @-webkit-keyframes bounce {
   0%,
-  100% { -webkit-transform: scale(0); transform: scale(0); }
-  50% { -webkit-transform: scale(1); transform: scale(1); }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 @keyframes bounce {
   0%,
-  100% { -webkit-transform: scale(0); -moz-transform: scale(0); transform: scale(0); }
-  50% { -webkit-transform: scale(1); -moz-transform: scale(1); transform: scale(1); }
+  100% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    transform: scale(0);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    transform: scale(1);
+  }
 }

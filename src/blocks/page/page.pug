@@ -1,0 +1,30 @@
+html(lang="ru")
+  include ../../base/head
+  block title
+    title Tatiana Yasin Art
+body
+  include ../../base/variables
+  include ../../base/mixins
+  include ../../blocks/blognews/blognews
+  .wrapper
+    block header
+      include ../../blocks/header/header
+    block pagetitle
+      .hero.color-container.red
+        .hero__container
+          block heroContent
+            h1.hero__title Tatiana Yasin
+            p.hero__text Живопись и графика художника Татьяны Ясин
+    block main
+      .content-container
+        main.work__main
+          .portfolio__categories
+            +categories(categories)
+          block content
+        block aside
+          aside.aside.block
+            a.aside__link(href="#")
+              h4.aside__title Блог
+            +asideCard(articles)
+    include ../../blocks/footer/footer
+  include ../../base/scripts

@@ -5,5 +5,13 @@ mixin blogcard(posts)
       .blognews__description
         h5.blognews__title=post[1]
         p.blognews__text=post[2]
-        a.blognews__link.fi.icon-arrow(href="#")
+        a.blognews__link.fi.icon-arrow(href="/layouts/post/post.html")
           span.blognews__decor Продолжить чтение
+
+mixin asideCard(posts)
+  each post in posts
+    .aside-news
+      img.aside-news__image(src=post[0])
+      .aside-news__description
+        a.aside-news__link(href="/layouts/post/post.html")
+          h6.aside-news__title=post[1]

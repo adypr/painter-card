@@ -1,0 +1,16 @@
+extends ../../blocks/page/page
+block title
+  title Tatiana Yasin blog
+block pagetitle
+  .page-title
+    h2 Новости, статьи
+block main
+      .content-container
+        main.work__main.block
+          .blogcards
+            +blogcard(articles)
+        aside.aside.block
+          a.aside__link(href="#")
+            h4.aside__title Рубрики работ
+          .portfolio__categories
+            +categories(categories)

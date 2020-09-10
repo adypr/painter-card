@@ -1,0 +1,93 @@
+.work {
+  & .portfolio__categories {
+    padding-top: 6px;
+  }
+
+  &__card {
+    @include media-breakpoint-up(sm) {
+      display: grid;
+      grid:
+        "title title"
+        "picture thumbs"
+        "text text"
+        "order order"
+        / 5fr 1fr;
+    }
+
+    @include media-breakpoint-up(lg) {
+      text-align: left;
+      grid:
+        "picture title"
+        "picture text" 1fr
+        "picture order"
+        "picture thumbs"
+        / 3fr 2fr;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    justify-self: center;
+  }
+
+  &__picture {
+    padding: 6px 0;
+    grid-area: picture;
+  }
+
+  &__largeimg {
+    width: 100%;
+
+    object-fit: contain;
+  }
+
+  &__thumbs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 12px;
+    gap: 6px;
+    grid-area: thumbs;
+
+    list-style-type: none;
+
+    @include media-breakpoint-between(sm, md) {
+      flex-direction: column;
+      align-items: flex-end;
+      margin: 0;
+      padding: 0 0 0 6px;
+    }
+  }
+
+  &__item {
+    max-width: 120px;
+  }
+
+  &__link {
+
+  }
+
+  &__thumb {
+    width: 100%;
+
+    object-fit: cover;
+  }
+
+  &__text {
+    grid-area: text;
+
+    padding-left: 6px;
+  }
+
+  &__order {
+    display: block;
+    width: 150px;
+    justify-self: center;
+
+    margin-right: auto;
+    margin-left: auto;
+    grid-area: order;
+  }
+
+  @extend .container;
+}

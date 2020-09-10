@@ -195,15 +195,18 @@ function svgMin() {
     // js2svg: {
     //   pretty: true
     // }
+    //plugins: [{
+    //  convertStyleToAttrs: false
+    //}]
   }))
-  .pipe(cheerio({
-    run: function ($) {
-      $('[fill]').removeAttr('fill');
-      $('[stroke]').removeAttr('stroke');
-      $('[style]').removeAttr('style');
-    },
-    parserOptions: {xmlMode: true}
-  }))
+  //.pipe(cheerio({
+  //  run: function ($) {
+  //    $('[fill]').removeAttr('fill');
+  //    $('[stroke]').removeAttr('stroke');
+  //    //$('[style]').removeAttr('style');
+  //  },
+  //  parserOptions: {xmlMode: true}
+  //}))
   .pipe(replace('&gt;', '>'))
   .pipe(dest(path.build.svg));
 }

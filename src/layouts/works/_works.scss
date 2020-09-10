@@ -1,0 +1,28 @@
+.works {
+  &__main {
+    padding: 12px;
+
+    & .portfolio__categories {
+      justify-content: center;
+      padding: 10px 6px 6px;
+    }
+
+    @include media-breakpoint-down(md) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  &__gallery {
+    display: grid;
+    gap: 12px;
+
+    padding: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(190px, auto));
+
+    @include media-breakpoint-down(md) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}

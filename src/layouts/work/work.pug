@@ -1,0 +1,25 @@
+extends ../../blocks/page/page
+block title
+  title Tatiana Yasin gallery
+block heroContent
+  h4 Абстракция
+block main
+  .work
+    .portfolio__categories
+      +categories(categories)
+    .breadcrumbs
+      a(href="#").fi.icon-gallery Галерея
+      span /
+      a(href="#") Пейзажи
+      span / Цветущая ветка
+    main.work__card.block
+      h4.work__title Цветущая ветка
+      .work__picture
+        img#largeImg(src=images[0][1] alt=[4]).work__largeimg
+      ul#thumbs.work__thumbs
+          - for (var i = 0; i < 4; i++)
+            li.work__item
+              a(href=images[i][1] title="Вид "+i).work__link
+                img(src=images[i][0] alt=images[i][4]).work__thumb
+      p.work__text Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки существенных финансовых и административных условий. Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции играет важную роль в формировании позиций, занимаемых участниками в отношении поставленных задач. С другой стороны укрепление и развитие структуры играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям.
+      button.order.work__order(type="button") Купить

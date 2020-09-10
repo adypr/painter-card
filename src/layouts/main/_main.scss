@@ -28,7 +28,7 @@
 
     flex-grow: 1;
     justify-content: right;
-    grid-template-columns: minmax(120px, 150px) repeat(auto-fit, minmax(120px, 150px));
+    grid-template-columns: minmax(100px, 150px) repeat(auto-fit, minmax(100px, 150px));
 
     @include media-breakpoint-down(xs) {
       justify-content: center;

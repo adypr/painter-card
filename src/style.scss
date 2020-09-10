@@ -7,6 +7,10 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css";
 @import "blocks/header/header.scss";
 @import "blocks/blognews/_blognews.scss";
-@import "blocks/footer/footer";
+@import "blocks/footer/footer.scss";
 //layouts
 @import "layouts/main/main.scss";
+@import "layouts/works/works.scss";
+@import "layouts/work/work.scss";
+@import "layouts/posts/posts.scss";
+@import "layouts/post/post.scss";

@@ -1,0 +1,22 @@
+extends ../../blocks/page/page
+block title
+  title Tatiana Yasin blog
+block pagetitle
+  .page-title
+    h2 Новости, статьи
+block main
+      .content-container
+        main.work__main.block
+          article.post
+            h4.post__title=articles[2][1]
+            picture.post__picture
+              img.post__img(src=articles[2][0])
+            p.post__text=articles[2][2]
+        aside.aside.block
+          a.aside__link(href="#")
+            h4.aside__title Статьи
+          +asideCard(articles)
+          a.aside__link(href="#")
+            h4.aside__title Рубрики работ
+          .portfolio__categories
+            +categories(categories)

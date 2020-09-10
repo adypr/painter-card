@@ -1,9 +1,32 @@
 mixin headerMenu(items)
   each item in items
     li.header__item
-      a.header__link(href="#")=item
+      a.header__link(href=item[0])=item[1]
 
 mixin categories(items)
   each item in items
     button.category(type="button")=item
 
+mixin thumbnail(src, alt)
+  img.portfolio__image(src=src alt=alt)
+
+mixin mainPictures(items)
+    each item in items
+      figure.portfolio__picture
+        a(href=item[1] data-caption="<h6>"+item[4]+"</h6><button class=\"btn btn-primary\">Подробнее</button>")
+          +thumbnail(item[0], item[4])
+        figcaption.portfolio__caption
+          p.portfolio__title=item[4]
+          a(href="/layouts/work/work.html") Подробнее
+
+mixin pageTitle(title)
+  .page-title
+    h1=title
+
+mixin worksPictures(items)
+  each item in items
+    figure.portfolio__picture
+      a(href="/layouts/work/work.html")
+        +thumbnail(item[0], item[4])
+      figcaption.portfolio__caption
+        p.portfolio__title=item[4]

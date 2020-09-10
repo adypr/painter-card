@@ -138,3 +138,7 @@ $small-font-size:             80% !default;
 
 $blockquote-small-font-size:  $small-font-size !default;
 $blockquote-font-size:        $font-size-base * 1.25 !default;
+
+//My svg
+
+$corner-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' shape-rendering='geometricPrecision' text-rendering='geometricPrecision' image-rendering='optimizeQuality' fill-rule='evenodd' clip-rule='evenodd' viewBox='0 0 180 180'%3E%3Cpath fill='%23E9ECEF' d='M130.79 130.49V0H.3c72.06 0 130.49 58.42 130.49 130.49z'/%3E%3Cpath fill='none' stroke='%23adb5bd' stroke-width='1' stroke-miterlimit='22.926' d='M0 .29c72.07 0 130.49 58.29 130.49 130.2'/%3E%3C/svg%3E");
